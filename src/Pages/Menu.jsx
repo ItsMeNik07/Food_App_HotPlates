@@ -33,7 +33,6 @@ function Menu(){
         }
         async function getData(cuisine){
             const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${cuisine}`)
-            console.log(response.data.meals)
             setData(response.data.meals);
             if(initialLoading){
                 setInitialLoading(false);
@@ -45,7 +44,6 @@ function Menu(){
 
 
         return function(){
-            console.log("cleaning");
             setData(null);
         }
     },[value])
@@ -53,7 +51,6 @@ function Menu(){
     useEffect(()=>{
         async function getMealData() {
             const res = await axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
-            console.log(res.data.meals);
             navigate('/item-description', { state: { mealData: res.data.meals } });
         }
         if(id){

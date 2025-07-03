@@ -8,6 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+Rintu-Repo\Food_App_HotPlates
 dist
 dist-ssr
 *.local

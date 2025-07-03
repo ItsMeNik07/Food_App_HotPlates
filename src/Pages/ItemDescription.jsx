@@ -8,8 +8,6 @@ function ItemDescription(){
     const location = useLocation()
     const [tags,setTags] = useState()
     const mealData = location.state?.mealData[0];
-    console.log(location.state?.food);
-    console.log(mealData);
        if(!mealData){
         return (
             <div className="bg-[#fff5cf] flex justify-center items-center h-[100vh]">
@@ -42,8 +40,8 @@ function ItemDescription(){
                 <p className="font-medium text-lg">{mealData.strArea}</p>
                 
                 {tags? (<div className="flex gap-3 flex-wrap">
-                    {tags.map((tag)=>(
-                        <p className="border-2 py-[1px] px-2 rounded-xl text-sm bg-yellow-600 border-yellow-500 font-light md:group-hover:scale-105 md:group-hover:border-yellow-600 transition-all duration-300 ease-in-out">{tag}</p>
+                    {tags.map((tag,index)=>(
+                        <p className="border-2 py-[1px] px-2 rounded-xl text-sm bg-yellow-600 border-yellow-500 font-light md:group-hover:scale-105 md:group-hover:border-yellow-600 transition-all duration-300 ease-in-out" key={index}>{tag}</p>
                     ))}
                         
                 </div>):null}

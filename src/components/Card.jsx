@@ -5,9 +5,7 @@ import Loader from "../Loader/Loader";
 import '../Loader/loader.css'
 function Card(){
     const data = useFetch();
-    console.log("card called");
     if(!data) return <div className="h-[100vh] flex justify-center items-center"><Loader /></div>;
-    console.log(data);
     const cardComponents = data.map((data)=>(
         <Container image = {data.strCategoryThumb}
         title = {data.strCategory}

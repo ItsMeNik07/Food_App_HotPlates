@@ -5,7 +5,6 @@ import useFetch from "./useFetch";
 function Container(props){
     const itemRef = useRef(null);
     const [expanded,setExpanded] = useState(false)
-    console.log("Container called")
     let shortDescription = "";
     if(props.description){
     shortDescription = props.description.slice(0,100) + "..."

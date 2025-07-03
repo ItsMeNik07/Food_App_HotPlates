@@ -1,9 +1,7 @@
 import FooterComponent from "./FooterComponent";
 import footerContact from "./footerContact";
 import footerData from "./footerdata";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from "react-router-dom";
-import Layout from "./Layout";
 function Footer(){
     return(
         <footer>
@@ -17,16 +15,18 @@ function Footer(){
             {/* Brands */}
             <div className="space-y-2">
                 <p className="font-semibold pl-5 text-md">Follow Us</p>
-                 {footerData.map((item)=>(
+                 {footerData.map((item,index)=>(
                     <FooterComponent icon = {item.icon}
-                     title = {item.title} />
+                     title = {item.title} 
+                     key = {index}/>
                 ))}
             </div>
             {/* Contact details */}
             <div className="space-y-2">
                 <p className="font-semibold pl-5">Contact</p>
-                {footerContact.map((item)=>(
+                {footerContact.map((item,index)=>(
                     <FooterComponent icon = {item.icon}
+                     key = {index}
                      title = {item.title}
                      reactIcon = {item.reactIcon} />
                 ))}

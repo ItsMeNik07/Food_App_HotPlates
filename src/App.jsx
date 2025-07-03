@@ -10,7 +10,6 @@ import Home from './Pages/Home'
 
 
 function App() {
-  console.log("app is called")
 
   return (
     <BrowserRouter>
