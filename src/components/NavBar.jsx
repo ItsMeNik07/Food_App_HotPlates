@@ -3,7 +3,6 @@ import { FaUserPlus } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
 import { Link, NavLink } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-import { useUser } from '@clerk/clerk-react';
 import { FaUserCheck } from "react-icons/fa";
 
 function NavBar({ onSearch,scrollToFooter }) {
@@ -15,7 +14,6 @@ function NavBar({ onSearch,scrollToFooter }) {
   const suggestionBoxRef = useRef(null);
   const wrapperRef = useRef(null);
   const location = useLocation();
-  const {isSignedIn} = useUser()
 
   // Debounce query input (400ms)
   useEffect(() => {
@@ -176,8 +174,7 @@ function NavBar({ onSearch,scrollToFooter }) {
             </div> :null}
             
             <button type="button" className='text-[#fe0100]'>
-              {isSignedIn ? <FaUserCheck className='text-[13px] md:text-xl'/> :<Link to="/signup"><FaUserPlus className='text-[13px] md:text-xl'/></Link> }
-             
+             <FaUserPlus className='text-[13px] md:text-xl'/>
             </button>
           </div>
 
