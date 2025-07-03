@@ -20,9 +20,6 @@ function App() {
         <Route path="menu" element = {<Menu />} />
         <Route path='item-description' element={<ItemDescription />} />
       </Route>
-
-        <Route path="signup" element = {<Signup />} />
-        <Route path="signin" element = {<Signin />} />
     </Routes>
     </BrowserRouter>
   )
