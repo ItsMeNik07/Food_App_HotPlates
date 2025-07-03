@@ -1,6 +1,6 @@
 import FooterComponent from "./FooterComponent";
 import footerContact from "./footerContact";
-import footerData from "./footerdata";
+import footerData from "./footerData";
 import { Link } from "react-router-dom";
 function Footer(){
     return(
