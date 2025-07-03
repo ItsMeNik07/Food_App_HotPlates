@@ -1,0 +1,77 @@
+  .burger-loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: assemble 1.8s ease-in-out infinite alternate;
+    transform-origin: center;
+    padding: 20px;
+  }
+
+  .bun {
+    width: 100px;
+    height: 25px;
+    background: linear-gradient(to bottom, #f5d28c, #dca14c);
+    border-radius: 50px 50px 20px 20px;
+    position: relative;
+  }
+
+  .bun.top::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 12px 2px white, 30px -3px white, 50px 3px white, 65px 1px white;
+  }
+
+  .bun.bottom {
+    border-radius: 20px 20px 50px 50px;
+    margin-top: 4px;
+    background: linear-gradient(to bottom, #dca14c, #b17730);
+  }
+
+  .lettuce {
+    width: 90px;
+    height: 10px;
+    background: linear-gradient(to bottom, #3cb043, #2e8b35);
+    border-radius: 5px;
+    margin-top: 2px;
+  }
+
+  .tomato {
+    width: 85px;
+    height: 8px;
+    background: linear-gradient(to bottom, #ff6347, #e02d10);
+    border-radius: 4px;
+    margin-top: 2px;
+  }
+
+  .cheese {
+    width: 80px;
+    height: 6px;
+    background: linear-gradient(to bottom, #ffcc00, #e6b800);
+    border-radius: 3px;
+    margin-top: 2px;
+  }
+
+  .patty {
+    width: 95px;
+    height: 15px;
+    background: linear-gradient(to bottom, #8b4513, #5c3317);
+    border-radius: 8px;
+    margin-top: 2px;
+  }
+
+  @keyframes assemble {
+    0% {
+      transform: translateY(-30px) scaleY(0.8);
+      opacity: 0.3;
+    }
+    100% {
+      transform: translateY(0) scaleY(1);
+      opacity: 1;
+    }
+  }

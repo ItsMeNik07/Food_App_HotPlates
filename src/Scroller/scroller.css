@@ -1,0 +1,18 @@
+/* Targeting Webkit-based browsers (Chrome, Edge, Safari) */
+.your-scroll-container::-webkit-scrollbar {
+  width: 8px; /* Width of scrollbar */
+}
+
+.your-scroll-container::-webkit-scrollbar-track {
+  background: #f0e6d2; /* Light background track */
+  border-radius: 10px;
+}
+
+.your-scroll-container::-webkit-scrollbar-thumb {
+  background: #a36c2f; /* Thumb color matching your theme */
+  border-radius: 10px;
+}
+
+.your-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #7a4f22; /* Darker on hover */
+}
