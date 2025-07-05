@@ -65,7 +65,7 @@ useEffect(()=>{
           <div className='my-auto md:space-y-4'>
           <Slogan />
         <TextBelowSLogan />
-        <div className='pt-4 space-y-1 place-items-start'>
+        <div className='pt-4 space-y-1 md:place-items-start'>
             <div className='hidden md:block'>
             <Trust />
             </div>
