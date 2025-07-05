@@ -65,27 +65,14 @@ useEffect(()=>{
           <div className='my-auto md:space-y-4'>
           <Slogan />
         <TextBelowSLogan />
-        <div className='pt-4 space-y-4'>
-            <div className='hidden md:flex justify-center'>
+        <div className='pt-4 space-y-1 place-items-start'>
+            <div className='hidden md:block'>
             <Trust />
             </div>
          <BtnBelowSlogan />
          </div>
         </div>
         </div>
-
-
-         {/* <div className='absolute bottom-32 md:-bottom-4 xl:bottom-1 2xl:-bottom-16 left-0 w-full z-10'>
-          <TextBelowSLogan />
-        </div>  */}
-
-        {/* <div className='absolute bottom-4 right-[50vw] lg:bottom-20 lg:right-[31vw] xl:bottom-44 2xl:right-[32vw] z-10'>
-          <BtnBelowSlogan />
-        </div> */}
-
-        {/* <div className='hidden md:block md:absolute md:right-24 lg:right-44 md:top-96 xl:top-[55vh] xl:right-[21vw] 2xl:top-[63vh] 2xl:right-[17vw] z-10'>
-          <Trust />
-        </div> */}
       </section>
 
       <section id='testimonials' className='md:pt-4'>

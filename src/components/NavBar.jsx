@@ -3,8 +3,6 @@ import { FaUserPlus } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
 import { Link, NavLink } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-import { useUser } from '@clerk/clerk-react';
-import { FaUserCheck } from "react-icons/fa";
 
 function NavBar({ onSearch,scrollToFooter }) {
   const [query, setQuery] = useState('');
@@ -15,7 +13,6 @@ function NavBar({ onSearch,scrollToFooter }) {
   const suggestionBoxRef = useRef(null);
   const wrapperRef = useRef(null);
   const location = useLocation();
-  const {isSignedIn} = useUser()
 
   // Debounce query input (400ms)
   useEffect(() => {
@@ -138,14 +135,14 @@ function NavBar({ onSearch,scrollToFooter }) {
 
   return (
     <div>
-      <nav id='navBar' className='bg-transparent h-5 flex justify-between items-center px-[2vw] py-4 md:py-0 text-[8px] font-bold tracking-widest md:h-12 md:px-[3vw] md:text-sm md:font-bold lg:h-16 xl:h-24 2xl:h-32'>
+      <nav id='navBar' className='bg-transparent h-5 flex flex-wrap justify-between items-center px-[2vw] py-4 md:py-0 text-[8px] font-bold tracking-widest md:h-12 md:px-[3vw] md:text-sm md:font-bold lg:h-16 xl:h-24 2xl:h-32'>
         
         <Link to="/" className='group cursor-pointer'>
           <span className='text-black group-hover:text-[#fe0100] transition duration-300 ease-in-out'>HOT</span>
           <span className='text-[#fe0100] group-hover:text-black transition duration-300 ease-in-out'>PLATES</span>
         </Link>
 
-        <div id='midSection' className='space-x-4 md:space-x-10 lg:space-x-12 xl:space-x-16'>
+        <div id='midSection' className='lg:space-x-12 xl:space-x-16'>
           <span>
           <NavLink to="/" className={({isActive})=>`px-3 py-2 uppercase tracking-widest transition duration-300 border-b-2 ${
       isActive? 'text-[#fe0100] border-transparent': 'text-black border-transparent hover:text-[#fe0100] hover:border-[#fe0100]'}`}>HOME</NavLink></span>
@@ -161,7 +158,7 @@ function NavBar({ onSearch,scrollToFooter }) {
 
         <form onSubmit={handleSearch} ref={wrapperRef} className='relative flex flex-col items-start'>
           <div className='flex items-center space-x-2 md:space-x-6'>
-            {location.pathname === "/" ?<div className='hidden md:flex border border-black bg-[#fff5cf] rounded-full overflow-hidden hover:border-yellow-700'>
+            {location.pathname === "/" ?<div className='hidden md:flex border p-1 pl-3 border-black bg-[#fff5cf] rounded-full hover:border-yellow-700'>
               <input
                 type="text"
                 placeholder="Search meals..."
@@ -176,7 +173,7 @@ function NavBar({ onSearch,scrollToFooter }) {
             </div> :null}
             
             <button type="button" className='text-[#fe0100]'>
-              {isSignedIn ? <FaUserCheck className='text-[13px] md:text-xl'/> :<Link to="/signup"><FaUserPlus className='text-[13px] md:text-xl'/></Link> }
+              <FaUserPlus className='text-[13px] md:text-xl'/>
              
             </button>
           </div>
@@ -184,7 +181,7 @@ function NavBar({ onSearch,scrollToFooter }) {
           {suggestions.length > 0 && (
             <ul
               ref={suggestionBoxRef}
-              className="absolute top-full mt-1 w-[200px] backdrop-blur-md bg-white/0 shadow-md rounded text-black text-xs z-50 max-h-48 overflow-y-auto hidden md:block scrollbar-hide"
+              className="absolute top-[90%] mt-1 w-[200px] backdrop-blur-md bg-white/0 shadow-md rounded text-black text-xs z-50 max-h-48 overflow-y-auto hidden md:block scrollbar-hide left-2"
             >
               {suggestions.map((meal, index) => (
                 <li

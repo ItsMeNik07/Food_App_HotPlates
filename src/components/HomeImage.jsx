@@ -4,7 +4,7 @@ import BurgerMobile2 from '../assets/BurgerMobile2.png'
 
 function HomeImage() {
   return (
-    <div className="w-full flex justify-center md:justify-end">
+    <div className="w-full h-full flex justify-center md:justify-end">
       {/* Mobile Image */}
       <img
         src={BurgerMobile2}
@@ -15,7 +15,7 @@ function HomeImage() {
       {/* Desktop Image */}
       <img
         src={BurgerHome2}
-        className="object-cover hidden md:block w-full"
+        className="object-cover hidden md:block w-full h-full"
         alt="Burger Desktop"
       />
     </div>
