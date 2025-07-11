@@ -137,7 +137,7 @@ function NavBar({ onSearch,scrollToFooter }) {
     <div>
       <nav id='navBar' className='bg-transparent h-5 flex flex-wrap justify-between items-center px-[2vw] py-4 md:py-0 text-[8px] font-bold tracking-widest md:h-12 md:px-[3vw] md:text-sm md:font-bold lg:h-16 xl:h-24 2xl:h-32'>
         
-        <Link to="/" className='group cursor-pointer'>
+        <Link to="/" className='group cursor-pointer sm:text-[1rem]'>
           <span className='text-black group-hover:text-[#fe0100] transition duration-300 ease-in-out'>HOT</span>
           <span className='text-[#fe0100] group-hover:text-black transition duration-300 ease-in-out'>PLATES</span>
         </Link>
